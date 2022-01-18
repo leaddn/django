@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href={% static 'bootstrap/css/bootstrap.min.css' %}>
+    <script src="https://kit.fontawesome.com/06466c4cae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        .main {
+            min-height: 100vh;
+            height: 100%;
+        }
+    </style>
+
+    <!-- Header -->
+    {% include 'snippets/header.html' %}
+    {% include 'snippets/base_css.html' %}
+    {% include 'snippets/base_js.html' %}
+
+    <!-- Body -->
+    <div class="main">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    <!-- Footer -->
+    {% include 'snippets/footer.html' %}
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

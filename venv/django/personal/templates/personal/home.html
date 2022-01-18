@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <style type="text/css">
+        .grid {
+            border: 1px solid black;
+        }
+        .grid-item {
+            border: 1px solid black;
+        }
+    </style>
+
+    <div class="container">
+        <div class="grid d-flex flex-row">
+            <p class="grid-item m-auto"><i class="fas fa-mountain"></i>Item</p>
+            <p class="grid-item m-auto">Item</p>
+            <p class="grid-item m-auto">Item</p>
+            <p class="grid-item m-auto">Item</p>
+        </div>
+    </div>
+
+    
+{% endblock content %}

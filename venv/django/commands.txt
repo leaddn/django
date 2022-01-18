@@ -1,0 +1,32 @@
+## Part 1
+docker build --tag python-django .
+docker run --publish 8000:8000 python-django
+
+## Part 2
+docker-compose build
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+
+## Part 3
+# build image :
+docker-compose build
+# start container to make application available :
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+# update if changes
+docker exec -it django_container /bin/bash
+# open a django terminal
+python manage.py migrate
+# migration to the databases
+docker ps
+# info about running containers
+python manage.py createsuperuser
+# Create superuser
+
+## PSQL:
+docker run --name postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+docker exec -it postgres-db bash
+# open psql terminal
+psql -h localhost -p 5432 -U postgres -W
+# connect & ask for password
+
