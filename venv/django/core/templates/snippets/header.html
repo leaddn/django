@@ -38,13 +38,15 @@
 								</div>
 							</div>
 
-							<div class="btn-group dropleft">
+							<div class="btn-group dropdown">
                                 <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads02&accessoriesType=Round&hairColor=SilverGray&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Vomit&skinColor=Tanned' class="account-image rounded-circle m-auto d-block dropdown-toggle" id="id_profile_links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="logo" width="40" height="40"/>
 								<div class="dropdown-menu" aria-labelledby="id_profile_links">
-									<a class="dropdown-item" href="#">Account</a>
+									<a class="dropdown-item" href="{% url 'account:view' user_id=request.user.id %}">Account</a>
 									<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
 								</div>
 							</div>
+                            <a class="dropdown-item" href="{% url 'account:view' user_id=request.user.id %}">Account</a>
+                            <a href="{% url 'logout' %}">Logout</a>
 						</div>
 						
 					</div>
@@ -73,10 +75,12 @@
 						<div class="btn-group dropleft">
                             <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads02&accessoriesType=Round&hairColor=SilverGray&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Vomit&skinColor=Tanned" class="account-image rounded-circle m-auto d-block dropdown-toggle" id="id_profile_links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="logo" width="40" height="40"/>
                             <div class="dropdown-menu" aria-labelledby="id_profile_links">
-								<a class="dropdown-item" href="#">Account</a>
+								<a class="dropdown-item" href="{% url 'account:view' user_id=request.user.id %}">Account</a>
 								<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
 							</div>
 						</div>
+                        <a class="dropdown-item" href="{% url 'account:view' user_id=request.user.id %}">Account</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
 					</div>
 				</div>
 				{% else %}

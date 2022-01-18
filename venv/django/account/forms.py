@@ -76,4 +76,4 @@ class AccountUpdateForm(forms.ModelForm):
         account.hide_email = self.cleaned_data['hide_email']
         if commit:
             account.save()
-        return 
+        return account

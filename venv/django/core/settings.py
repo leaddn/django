@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-jks28(pp3+nk%fbw_8@2s=%)tl_@kf)@p4s--dw+rr7#mfo3k2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ALLOWED_HOSTS = ['0.0.0.0']
 
 AUTH_USER_MODEL = "account.Account"
@@ -135,6 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760 # 10mb = 10 * 1024 *1024
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -168,3 +172,6 @@ TEMP = os.path.join(PROJECT_PATH, 'media_cdn/temp/')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BASE_URL = "http://127.0.0.1:8000"
+
